@@ -101,12 +101,11 @@ body {
     height: 100%;
     width: 60px;
     border-radius: 5px;
-    /* border: none; */
+    border: none;
     cursor: pointer;
     outline: none;
     /* margin-left: 15rem; */
     /* padding: 1rem; */
-    border: 1px solid red;
 }
 .edit{
     background-color: #0a2ea4;
@@ -117,8 +116,6 @@ body {
     border: none;
     cursor: pointer;
     outline: none;
-    border: 1px solid red;
-
 }
 
 .completed {
