@@ -98,6 +98,16 @@ body {
     cursor: pointer;
     outline: none;
 }
+.task .edit{
+    background-color: #0a2ea4;
+    color: #ffffff;
+    height: 100%;
+    width: 60px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    outline: none;
+}
 
 .completed {
     text-decoration: line-through;
