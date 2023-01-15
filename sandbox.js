@@ -1,7 +1,6 @@
 let inp = document.querySelector('#inp');
 let inp_btn = document.querySelector('#push');
 let todo = document.querySelector('#tasks');
-// console.log(inp.value);
 document.addEventListener('keypress', (e)=>{
     if (e.keyCode === 13) {
         getTask();
@@ -16,7 +15,7 @@ function getTask (){
         `<div class="task">
             <span>${inp.value}</span>         
             <div class="btn-div">
-            <button onclick="dlt(this)" class="Del delete">Delete</button>
+            <button  class="Del delete">Delete</button>
             <button class="edit">Edit</button>
             </div>
         </div>`
@@ -27,16 +26,16 @@ function getTask (){
 }
 
 //      LEYE'S METHOD
-    function dlt(e) {
-        e.parentElement.remove();
-    }
+    // onclick="dlt(this)"
+    // function dlt(e) {
+    //     e.parentNode.remove();
+    // }
 
+        //  SAMUEL'S METHOD!
+    todo.addEventListener('click', (e) => {
+        if (e.target.classList.contains('Del')) {
+            // console.log(e.target);
+           e.target.parentNode.parentNode.remove();
+        }
+    });
 
-
-
-//      SAMUEL'S METHOD!
-// todo.addEventListener('click', (e) => {
-//     if (e.target.classList.contains('Del')) {
-//        e.target.parentNode.remove();
-//     }
-//    });
