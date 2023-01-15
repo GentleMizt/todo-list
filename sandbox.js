@@ -13,12 +13,14 @@ function getTask (){
    if (inp.value !== '') {
         todo.innerHTML += 
         `<div class="task">
-            <span>${inp.value}</span>         
+            <span class="span-value">${inp.value}</span>         
             <div class="btn-div">
             <button  class="Del delete">Delete</button>
             <button class="edit">Edit</button>
             </div>
         </div>`
+        let val = document.querySelector('.span-value');
+        console.log(val.textContent);
         inp.value = ''
     } else {
     alert('Input field cannot be empty');
@@ -39,3 +41,34 @@ function getTask (){
         }
     });
 
+
+    function list () {
+        
+        // console.log(val);
+    }
+
+    list();
+
+
+
+
+
+
+    // if (input.value !== "") {
+    //     for (let i = 0; i < listItems.length; i++) {
+    //       console.log(listItems[i].innerText);
+    //       if (listItems[i].innerText === input.value) {
+    //         err.innerText =
+    //           "Item already exists click on the item to increase its quantity";
+    //         input.value = "";
+    //         return;
+    //       }
+    //     }
+    //     const li = document.createElement("li");
+    //     li.innerText = input.value;
+    //     ul.appendChild(li);
+        
+    //     console.log(listItems);
+    //     input.value = "";
+    //   }
+    //   console.log(ul.children
