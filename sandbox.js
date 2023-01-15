@@ -15,7 +15,8 @@ function getTask (){
         todo.innerHTML += 
         `<div class="task">
             <span>${inp.value}</span>         
-            <button onclick="dlt(this)" class="Del">Delete</button>
+            <button onclick="dlt(this)" class="Del delete">Delete</button>
+            <button class="edit">Edit</button>
         </div>`
         inp.value = ''
     } else {
