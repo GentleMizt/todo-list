@@ -39,25 +39,30 @@ function getTask (){
                 <button class="edit">Edit</button>
                 </div>
             </div>`
-            inp.value = ''  
+           ;
         } 
     } else{
         alert('Input field cannot be empty');
-    }  
+    } 
+    let span = document.querySelector('span');
+    console.log(span) 
+    inp.value = ''  ;
 }
 
-// let val = document.querySelector('.span-value');
-
-//      LEYE'S METHOD
-    // onclick="dlt(this)"
-    // function dlt(e) {
-    //     e.parentNode.remove();
-    // }
 
         //  SAMUEL'S METHOD!
     todo.addEventListener('click', (e) => {
         if (e.target.classList.contains('Del')) {
             // console.log(e.target);
+            // inp.value = span.textContent  ;
+           e.target.parentNode.parentNode.remove();
+        }
+    });
+    todo.addEventListener('click', (e) => {
+        if (e.target.classList.contains('edit')) {
+            // console.log(e.target);
+            inp.value = e.target.parentNode.parentNode.children[0].textContent;
+            // console.log(e.target.parentNode.parentNode.children[0].textContent);
            e.target.parentNode.parentNode.remove();
         }
     });
