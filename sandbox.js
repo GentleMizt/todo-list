@@ -8,9 +8,26 @@ document.addEventListener('keypress', (e)=>{
 });
 inp_btn.addEventListener('click',getTask)
 
+function checkTask(todo) {
+    let check ={
+        found : false,
+        element : null,
+    };
+    document.querySelectorAll('.span-value').forEach((span) =>{
+        if (span.value === todo){
+            check.found = true;
+            check.element = span;
+        }
+    });
+    return check;
+}
 
-function getTask (){ 
+function getTask (){     
    if (inp.value !== '') {
+    let check = checkTask (inp.value)
+    if (check.found === true){
+        
+    }
         todo.innerHTML += 
         `<div class="task">
             <span class="span-value">${inp.value}</span>         
@@ -20,8 +37,10 @@ function getTask (){
             </div>
         </div>`
         let val = document.querySelector('.span-value');
-        console.log(val.textContent);
-        inp.value = ''
+        for (let i = 0; i<val.length; i++){
+            console.log(val.innerHTML[i]);
+        }
+        inp.value = ''  
     } else {
     alert('Input field cannot be empty');
 }
@@ -41,13 +60,13 @@ function getTask (){
         }
     });
 
+    // let val = document.querySelector('.span-value');
+    // console.log(val.textContent);
+    // function list () {
+    
+    // }
 
-    function list () {
-        
-        // console.log(val);
-    }
-
-    list();
+    // list();
 
 
 
