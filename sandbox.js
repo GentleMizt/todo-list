@@ -5,6 +5,7 @@ document.addEventListener('keypress', (e)=>{
     if (e.keyCode === 13) {
         getTask();
     }
+
 });
 inp_btn.addEventListener('click',getTask)
 
@@ -54,9 +55,10 @@ function getTask (){
            e.target.parentNode.parentNode.remove();
         }
     });
-    todo.addEventListener('click', (e) => {
+    todo.addEventListener('click', editTask);
+    function editTask(e) {
         if (e.target.classList.contains('edit')) {
             inp.value = e.target.parentNode.parentNode.children[0].textContent;
            e.target.parentNode.parentNode.remove();
         }
-    });
+    }
