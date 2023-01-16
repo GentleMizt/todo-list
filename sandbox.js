@@ -14,7 +14,7 @@ function checkTask(todo) {
         element : null,
     };
     document.querySelectorAll('.span-value').forEach((span) =>{
-        if (span.value === todo){
+        if (span.textContent === todo){
             check.found = true;
             check.element = span;
         }
@@ -24,27 +24,29 @@ function checkTask(todo) {
 
 function getTask (){     
    if (inp.value !== '') {
-    let check = checkTask (inp.value)
-    if (check.found === true){
-        
-    }
-        todo.innerHTML += 
-        `<div class="task">
-            <span class="span-value">${inp.value}</span>         
-            <div class="btn-div">
-            <button  class="Del delete">Delete</button>
-            <button class="edit">Edit</button>
-            </div>
-        </div>`
-        let val = document.querySelector('.span-value');
-        for (let i = 0; i<val.length; i++){
-            console.log(val.innerHTML[i]);
-        }
-        inp.value = ''  
-    } else {
-    alert('Input field cannot be empty');
+        let check = checkTask (inp.value)
+        if (check.found === true){
+            alert ('You have this Task already')
+            check.element.parentElement.style.background = 'red'
+            check.element.style.background = '#ff7b7b'
+            check.element.style.color = 'white'
+        } else{
+            todo.innerHTML += 
+            `<div class="task">
+                <span class="span-value">${inp.value}</span>         
+                <div class="btn-div">
+                <button  class="Del delete">Delete</button>
+                <button class="edit">Edit</button>
+                </div>
+            </div>`
+            inp.value = ''  
+        } 
+    } else{
+        alert('Input field cannot be empty');
+    }  
 }
-}
+
+// let val = document.querySelector('.span-value');
 
 //      LEYE'S METHOD
     // onclick="dlt(this)"
