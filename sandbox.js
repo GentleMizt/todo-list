@@ -25,11 +25,11 @@ function checkTask(todo) {
 
 function getTask (){     
    if (inp.value !== '') {
-        let check = checkTask (inp.value)
+        let check = checkTask (inp.value);
         if (check.found === true){
             alert ('You have this Task already')
             check.element.parentElement.style.background = 'red'
-            check.element.style.background = '#ff7b7b'
+            check.element.style.background = 'black'
             check.element.style.color = 'white'
         } else{
             todo.innerHTML += 
@@ -50,15 +50,16 @@ function getTask (){
     inp.value = ''  ;
 }
 
-    todo.addEventListener('click', (e) => {
-        if (e.target.classList.contains('Del')) {
-           e.target.parentNode.parentNode.remove();
-        }
-    });
+    todo.addEventListener('click',deleteTask);
     todo.addEventListener('click', editTask);
     function editTask(e) {
         if (e.target.classList.contains('edit')) {
             inp.value = e.target.parentNode.parentNode.children[0].textContent;
            e.target.parentNode.parentNode.remove();
         }
+    }
+    function deleteTask(e) {
+        if (e.target.classList.contains('Del')) {
+            e.target.parentNode.parentNode.remove();
+         }
     }
